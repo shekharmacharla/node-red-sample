@@ -1,0 +1,126 @@
+[
+    {
+        "id": "ee8c81eb.6ae76",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "5edb4cdf.9b92a4",
+        "type": "inject",
+        "z": "ee8c81eb.6ae76",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 390,
+        "y": 220,
+        "wires": [
+            [
+                "c7d6a1b9.244bf"
+            ]
+        ]
+    },
+    {
+        "id": "c7d6a1b9.244bf",
+        "type": "function",
+        "z": "ee8c81eb.6ae76",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 690,
+        "y": 180,
+        "wires": [
+            [
+                "6d9bfddf.003dd4"
+            ]
+        ]
+    },
+    {
+        "id": "6d9bfddf.003dd4",
+        "type": "switch",
+        "z": "ee8c81eb.6ae76",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 840,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "65191d9f.431064",
+        "type": "change",
+        "z": "ee8c81eb.6ae76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 440,
+        "wires": [
+            [
+                "6d9bfddf.003dd4",
+                "1575d749.e3e1d9"
+            ]
+        ]
+    },
+    {
+        "id": "1575d749.e3e1d9",
+        "type": "exec",
+        "z": "ee8c81eb.6ae76",
+        "command": "",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 820,
+        "y": 500,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    }
+]
